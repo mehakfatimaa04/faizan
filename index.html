@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Unlock</title>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background: linear-gradient(135deg,#b56cff,#ff8fd8);
+        overflow:hidden;
+    }
+
+    /* Hearts */
+    .heart{
+        position:absolute;
+        color:white;
+        font-size:20px;
+        opacity:0.5;
+        animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float{
+        0%{transform:translateY(0);}
+        50%{transform:translateY(-20px);}
+        100%{transform:translateY(0);}
+    }
+
+    .container{
+        width:350px;
+        background:rgba(255,255,255,0.15);
+        backdrop-filter: blur(12px);
+        padding:30px;
+        border-radius:25px;
+        text-align:center;
+        color:white;
+        box-shadow:0 0 25px rgba(255,255,255,0.2);
+    }
+
+    .title{
+        font-size:30px;
+        font-family:cursive;
+        margin-bottom:20px;
+    }
+
+    .question{
+        margin-bottom:20px;
+        font-size:18px;
+    }
+
+    #display{
+        width:100%;
+        height:50px;
+        border:none;
+        border-radius:12px;
+        margin-bottom:20px;
+        text-align:center;
+        font-size:24px;
+        background:rgba(255,255,255,0.3);
+        color:white;
+    }
+
+    .keypad{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:10px;
+    }
+
+    button{
+        padding:18px;
+        font-size:20px;
+        border:none;
+        border-radius:15px;
+        cursor:pointer;
+        background:rgba(255,255,255,0.25);
+        color:white;
+        transition:0.2s;
+    }
+
+    button:hover{
+        background:rgba(255,255,255,0.4);
+    }
+
+    .message{
+        margin-top:15px;
+        font-size:18px;
+        font-weight:bold;
+    }
+</style>
+</head>
+<body>
+
+<div class="heart" style="top:10%;left:10%">💖</div>
+<div class="heart" style="top:20%;right:15%">✨</div>
+<div class="heart" style="bottom:20%;left:15%">💗</div>
+<div class="heart" style="bottom:10%;right:10%">✨</div>
+
+<div class="container">
+    <div class="title">Heyy my love Faizan</div>
+    <div class="question">When was the first time we started talking?</div>
+
+    <input id="display" readonly>
+
+    <div class="keypad">
+        <button onclick="addNum('1')">1</button>
+        <button onclick="addNum('2')">2</button>
+        <button onclick="addNum('3')">3</button>
+        <button onclick="addNum('4')">4</button>
+        <button onclick="addNum('5')">5</button>
+        <button onclick="addNum('6')">6</button>
+        <button onclick="addNum('7')">7</button>
+        <button onclick="addNum('8')">8</button>
+        <button onclick="addNum('9')">9</button>
+        <button onclick="clearInput()">⌫</button>
+        <button onclick="addNum('0')">0</button>
+        <button onclick="checkPassword()">🔓</button>
+    </div>
+
+    <div class="message" id="message"></div>
+</div>
+
+<script>
+let input = "";
+const correctPassword = "21042026";
+
+function addNum(num){
+    if(input.length < 8){
+        input += num;
+        document.getElementById("display").value = "*".repeat(input.length);
+    }
+}
+
+function clearInput(){
+    input = input.slice(0,-1);
+    document.getElementById("display").value = "*".repeat(input.length);
+}
+
+function checkPassword(){
+    if(input === correctPassword){
+        window.location.href = "page2.html";
+    }else{
+        document.getElementById("message").innerText = "Try again 💔";
+        input = "";
+        document.getElementById("display").value = "";
+    }
+}
+</script>
+
+</body>
+</html>
