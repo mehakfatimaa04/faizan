@@ -157,3 +157,124 @@ function checkPassword(){
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Letter For Faizan</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background: linear-gradient(135deg,#7b2ff7,#d76dff,#f8a5ff);
+    font-family: Georgia, serif;
+}
+
+/* Sparkles */
+.sparkle{
+    position:absolute;
+    color:white;
+    animation: sparkle 3s infinite ease-in-out;
+    opacity:0.8;
+}
+
+@keyframes sparkle{
+    0%,100%{transform:scale(1); opacity:0.3;}
+    50%{transform:scale(1.5); opacity:1;}
+}
+
+/* Hearts */
+.heart{
+    position:absolute;
+    font-size:24px;
+    animation: float 5s infinite ease-in-out;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-20px);}
+}
+
+/* Flower animation */
+.flower{
+    position:absolute;
+    font-size:60px;
+    animation:bloom 4s infinite alternate;
+}
+
+@keyframes bloom{
+    from{transform:scale(0.8) rotate(0deg);}
+    to{transform:scale(1.1) rotate(8deg);}
+}
+
+/* Letter */
+.letter{
+    width:70%;
+    max-width:850px;
+    background:#f8ecd8;
+    border:8px solid #c59b6d;
+    border-radius:18px;
+    padding:40px;
+    box-shadow:0 0 40px rgba(0,0,0,0.3);
+    position:relative;
+    overflow-y:auto;
+    max-height:85vh;
+}
+
+.letter::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(255,248,220,0.3);
+    pointer-events:none;
+}
+
+h1{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:25px;
+    color:#6b3a2f;
+    font-family:cursive;
+}
+
+p{
+    font-size:22px;
+    line-height:1.8;
+    color:#4b2d22;
+}
+</style>
+</head>
+<body>
+
+<div class="sparkle" style="top:10%;left:15%">✨</div>
+<div class="sparkle" style="top:20%;right:10%">✨</div>
+<div class="sparkle" style="bottom:15%;left:10%">✨</div>
+
+<div class="heart" style="top:8%;right:25%">💜</div>
+<div class="heart" style="bottom:10%;right:18%">💖</div>
+
+<div class="flower" style="bottom:20px;left:20px;">🌸</div>
+<div class="flower" style="top:20px;right:20px;">🌺</div>
+<div class="flower" style="bottom:20px;right:40px;">🌷</div>
+<div class="flower" style="top:40px;left:40px;">🪷</div>
+
+<div class="letter">
+    <h1>For Faizan 💌</h1>
+
+    <p>
+        PASTE YOUR LETTER HERE
+    </p>
+</div>
+
+</body>
+</html>
